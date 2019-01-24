@@ -5,17 +5,17 @@
  Open command prompt and run below command.
 
  You have to install robot framework
-    Open CMD
+Open CMD
     `pip install robotframework`
 
-    then selenium2library
+then selenium2library
 
     ``pip install robotframework-selenium2library``
 
-    install chromewebdriver
+install chromewebdriver
 
     ```pip install chromedriver_installer```
 
-    You are ready to run your Test case
+You are ready to run your Test case
     ``cd  ${YOUR_PATH}``
     ``robot -d results tests/project.robot``
