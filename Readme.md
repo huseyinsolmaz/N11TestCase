@@ -5,7 +5,9 @@
  Open command prompt and run below command.
 
  You have to install robot framework
+
 Open CMD
+
     `pip install robotframework`
 
 then selenium2library
