@@ -25,11 +25,6 @@ steps:
 - script: |
     pip install robotframework robotframework-selenium2library robotframework && npm install chromedriver
 
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
-
 - powershell: |
     robot --pythonpath . -d result tests/project.robot.
 
