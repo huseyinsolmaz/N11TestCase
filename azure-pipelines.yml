@@ -23,7 +23,7 @@ steps:
     python -m pip install --upgrade pip
   displayName: 'Install dependencies'
 - script: |
-    pip install robotframework robotframework-selenium2library robotframework && npm install chromedriver
+    pip install robotframework robotframework-selenium2library robotframework robotframework-faker && npm install chromedriver
 
 - powershell: |
     robot --pythonpath . -d result tests/project.robot
