@@ -26,5 +26,5 @@ steps:
     pip install robotframework robotframework-selenium2library robotframework && npm install chromedriver
 
 - powershell: |
-    robot --pythonpath . -d result tests/project.robot.
+    robot --pythonpath . -d result tests/project.robot
 
