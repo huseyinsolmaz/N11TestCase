@@ -9,9 +9,8 @@ Library           FakerLibrary
 
 *** Keywords ***
 Launch Browser
-    [Arguments]  ${browser}  ${url}=${amazonUrl}
-    Set Environment Variable   webdriver.chrome.driver   ${CURDIR}/chromedriver.exe
-    Open Browser    ${amazonUrl}    ${browser}  alias=Main
+    [Arguments]  ${url}=${amazonUrl}
+    HeadlessChrome  ${url}
     Maximize Browser Window
 
 wait for home page
@@ -173,3 +172,21 @@ Scroll To Location
   [arguments]    ${y}
   Execute Javascript    window.scrollTo(0,${y})
 
+Set Chrome Options
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    : FOR    ${option}    IN    @{chrome_arguments}
+    \    Call Method    ${options}    add_argument    ${option}
+    [Return]    ${options}
+
+HeadlessChrome
+    [Arguments]   ${URL}   ${alias}=None
+    Set Environment Variable   webdriver.chrome.driver   ${CURDIR}/chromedriver.exe
+    Set Screenshot Directory  ${CURDIR}/../Tests/testresults/${TEST_NAME}
+    ${chrome_options}=    Set Chrome Options
+    ${ws}=    Set Variable    window-size=1920,1200
+    ${disableLogging}=    Set Variable    --log-level=3
+    Call Method   ${chrome_options}    add_argument    ${ws}
+    Call Method   ${chrome_options}    add_argument    ${disableLogging}
+    Create Webdriver    Chrome   ${alias}   chrome_options=${chrome_options}
+    Go To  ${URL}
+    Capture Page Screenshot
