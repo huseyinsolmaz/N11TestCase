@@ -1,4 +1,5 @@
 *** Settings ***
+Resource   ../Variables/variables.robot
 Library           Collections
 Library           String
 Library           Selenium2Library

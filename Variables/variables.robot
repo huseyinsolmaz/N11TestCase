@@ -1,2 +1,2 @@
 *** Variables ***
-${amazonUrl}  https://www.amazon.com
+${amazonUrl}   https://www.amazon.com
