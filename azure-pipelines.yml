@@ -31,6 +31,6 @@ steps:
     pytest
   displayName: 'pytest'
 
--script: |
+-powershell: |
     robot --pythonpath . -d result tests/project.robot.
 
