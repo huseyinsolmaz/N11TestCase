@@ -1,14 +1,16 @@
 *** Settings ***
-Resource   ../Variables/variables.robot
+Resource      ../Variables/variables.robot
 Library           Collections
 Library           String
 Library           Selenium2Library
+Library           OperatingSystem
 Resource          Variables.robot
 Library           FakerLibrary
 
 *** Keywords ***
 Launch Browser
     [Arguments]  ${browser}  ${url}=${amazonUrl}
+    Set Environment Variable   webdriver.chrome.driver   ${CURDIR}/chromedriver.exe
     Open Browser    ${amazonUrl}    ${browser}  alias=Main
     Maximize Browser Window
 
