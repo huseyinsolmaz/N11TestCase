@@ -28,7 +28,7 @@ Pypubsub==4.0.0
 pysftp==0.2.9
 python-dateutil==2.7.5
 pytz==2018.9
-pywin32==224
+pywin32==301
 requests==2.21.0
 requests-oauthlib==1.0.0
 robotframework==3.0.4
