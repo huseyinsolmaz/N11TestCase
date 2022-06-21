@@ -14,7 +14,7 @@ idna==2.8
 ipaddress==1.0.22
 jdcal==1.4
 natsort==5.5.0
-numpy==1.15.4
+numpy==1.22.0
 oauthlib==2.1.0
 openpyxl==2.5.12
 pandas==0.23.4
